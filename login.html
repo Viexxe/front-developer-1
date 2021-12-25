@@ -24,7 +24,6 @@
             font-family: 'Quicksand', sans-serif;
             margin: 0;
         }
-    
         .login {
             width: 100%;
             height: 100vh;
@@ -36,40 +35,28 @@
             grid-template-rows: auto 1fr auto;
             width: 300px;
         }
-        
         .logo {
             width: 150px;
             margin-bottom: 48px;
             justify-self: center;
             display: none;
         }
-        .title {
-            font-size: var(--lg);
-            margin-bottom: 12px;
-            text-align: center;
-        }
-
-        .subtitle {
-            color: var(--very-light-pink);
-            font-size: var(--md);
-            font-weight: 300;
-            margin-top: 0;
-            margin-bottom: 32px;
-            text-align: center;
-        }
-
         .form {
             display: flex;
             flex-direction: column;
-
         }
-
+        .form a {
+            color: var(--hospital-green);
+            font-size: var(--sm);
+            text-align: center;
+            text-decoration: none;
+            margin-bottom: 52px;
+        }
         .label {
             font-size: var(--sm);
             font-weight: bold;
             margin-bottom: 4px;
         }
-
         .input {
             background-color: var(--text-input-field);
             border: none;
@@ -79,7 +66,9 @@
             padding: 6px;
             margin-bottom: 12px;
         }
-
+        .input-email {
+            margin-bottom: 24px;
+        }
         .primary-button {
             background-color: var(--hospital-green);
             border-radius: 8px;
@@ -90,18 +79,25 @@
             font-weight: bold;
             height: 50px;
         }
-
+        .secondary-button {
+            background-color: var(---white);
+            border-radius: 8px;
+            border: 1px solid var(--hospital-green);
+            color: var(--hospital-green);
+            width: 100%;
+            cursor: pointer;
+            font-weight: bold;
+            height: 50px;   
+        }
         @media (max-width: 640px) {
             .logo {
                 display: block;
             }
         }
-
         .login-button {
             margin-top: 12px;
             margin-bottom: 30px;
         }
-
     </style>
 </head>
 <body>
@@ -110,22 +106,23 @@
             <img src="./logos/logo_yard_sale.svg" alt="logo"
             class="logo">
 
-            <h1 class="title">Create a new password</h1>
-            <p class="subtitle">Enter a new password for your account</p>
-
             <form action="/" class="form">
+                <label for="email" 
+                class="label">Email address</label>
+                <input type="text" id="email" placeholder="platzi@example.com"
+                class="input input-email">
+
                 <label for="password" 
                 class="label">Password</label>
                 <input type="password" id="password" placeholder="*********"
-                class="input input-passowrd">
+                class="input input-password">
 
-                <label for="new-password" 
-                class="label">Password</label>
-                <input type="password" id="new-password" placeholder="*********"
-                class="input input-passowrd">
+                <input type="submit" value="Log in" class="primary-button login-button">
 
-                <input type="submit" value="Confirm" class="primary-button login-button">
+                <a href="/">Forgot my password</a>
             </form>
+
+            <button class="secondary-button signup-button">Sign up</button>
         </div>
     </div>
 </body>
